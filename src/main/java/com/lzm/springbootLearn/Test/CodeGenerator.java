@@ -1,4 +1,4 @@
-package com.lzm.springbootlearn.Test;
+package com.lzm.springbootLearn.Test;
 
 
 import com.baomidou.mybatisplus.annotation.DbType;
@@ -44,7 +44,8 @@ public class CodeGenerator {
 
     private static TemplateConfig templateConfig = null;
 
-        private static String defaultOutPutPath = "/nv-#module_name#/nv-#module_name#-biz/src/main/java/";//默认模板文件的输出目录
+    private static String defaultOutPutPath = "/nv-#module_name#/nv-#module_name#-biz/src/main/java/";//默认模板文件的输出目录
+
     //自定义生成的文件的packge名
     private static String parentPackage = "org.jeecg.modules.#module_name#";//父包
     //     projectPath + otherModule + targetPath  自定义生成的文件
@@ -68,16 +69,16 @@ public class CodeGenerator {
     private static boolean mapper_output = true;
 
     //自定义输出路径
-    private static boolean xml_output = false; //自定义mapper.xml模板
-    private static boolean custom_mapper_output = false;//自定义mapper模板
-    private static boolean custom_entity_output = false;//自定义实体模板
+    private static boolean xml_output = true; //自定义mapper.xml模板
+    private static boolean custom_mapper_output = true;//自定义mapper模板
+    private static boolean custom_entity_output = true;//自定义实体模板
 
 
     /**
      * 查询语句:select GROUP_CONCAT(table_name) from information_schema.tables where table_schema='nanfanghosp_dev' and TABLE_NAME like "nf_%"
      * 目标生成:nf_backlist_history,nf_file
      * <p>注意：
-     *     <b>注意，不要轻易重新生成现有表的代码，会覆盖非表字段</b>
+     * <b>注意，不要轻易重新生成现有表的代码，会覆盖非表字段</b>
      */
     public static void main(String[] args) {
 //        {"activity","content","creator","interaction","live","member","operate","third","pay",};

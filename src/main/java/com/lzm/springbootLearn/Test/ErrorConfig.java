@@ -1,4 +1,4 @@
-package com.lzm.springbootlearn.Test;
+package com.lzm.springbootLearn.Test;
 
 /**
  * @author hejinwu

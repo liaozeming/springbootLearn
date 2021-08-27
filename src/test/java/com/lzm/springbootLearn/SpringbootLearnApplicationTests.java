@@ -1,4 +1,4 @@
-package com.lzm.springbootlearn;
+package com.lzm.springbootLearn;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
