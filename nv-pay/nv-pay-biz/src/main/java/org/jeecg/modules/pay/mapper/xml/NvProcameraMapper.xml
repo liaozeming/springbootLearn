@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.pay.mapper.NvProcameraMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.jeecg.modules.pay.entity.NvProcamera">
+        <id column="id" property="id" />
+        <result column="member_id" property="memberId" />
+        <result column="spm" property="spm" />
+        <result column="link_url" property="linkUrl" />
+        <result column="title" property="title" />
+        <result column="admin_id" property="adminId" />
+        <result column="reason" property="reason" />
+        <result column="status" property="status" />
+        <result column="tax_money" property="taxMoney" />
+        <result column="money" property="money" />
+        <result column="check_status" property="checkStatus" />
+        <result column="check_time" property="checkTime" />
+        <result column="grant_status" property="grantStatus" />
+        <result column="grant_time" property="grantTime" />
+        <result column="message_status" property="messageStatus" />
+        <result column="flag_id" property="flagId" />
+        <result column="create_time" property="createTime" />
+        <result column="modify_time" property="modifyTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, member_id, spm, link_url, title, admin_id, reason, status, tax_money, money, check_status, check_time, grant_status, grant_time, message_status, flag_id, create_time, modify_time
+    </sql>
+
+</mapper>
