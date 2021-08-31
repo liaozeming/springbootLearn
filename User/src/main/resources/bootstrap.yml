@@ -1,0 +1,60 @@
+server:
+  port: 9991
+spring:
+  application:
+    name: springbootLearn
+  cloud:
+    nacos:
+      discovery:
+        #        server-addr: nd-cloud-nacos:8848
+        server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yml
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        shared-dataids: application-nd-cloud.yml
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/user?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.jdbc.Driver
+#mybatis plus 设置
+mybatis-plus:
+  mapper-locations:
+    - classpath*:com/lzm/springbootLearn/**/mapper/xml/*.xml
+#    - classpath:/mapper/*Mapper.xml
+  global-config:
+      # 关闭MP3.0自带的banner
+      banner: false
+      db-config:
+        #主键类型  0:"数据库ID自增",1:"该类型为未设置主键类型", 2:"用户输入ID",3:"全局唯一ID (数字类型唯一ID)", 4:"全局唯一ID UUID",5:"字符串全局唯一ID (idWorker 的字符串表示)";
+        id-type: ID_WORKER_STR
+        # 默认数据库表下划线命名
+        table-underline: false
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 返回类型为Map,显示null对应的字段
+    call-setters-on-nulls: true
+#  cloud:
+#    nacos:
+#      discovery:
+#        #        server-addr: nd-cloud-nacos:8848
+#        server-addr: 192.168.73.122:8848
+#      config:
+#        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#        file-extension: yml
+#  security:
+#    user:
+#      name: nvideomgr
+#      password: 12345688
+#      roles: ADMIN
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include:  '*'
+
